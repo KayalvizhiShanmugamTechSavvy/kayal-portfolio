@@ -1,81 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kayalvizhi Shanmugam | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      background-color: #f4f6f8;
-      color: #2c3e50;
+      background-color: #e6f0fa;
+      color: #0f172a;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #2e7d32;
+      background-color: #1e3a8a;
       color: white;
-      padding: 40px 20px;
+      padding: 20px 20px 60px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
+
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    nav a {
+      color: #93c5fd;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #bfdbfe;
+    }
+
     section {
-      padding: 40px 60px;
-      max-width: 1200px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
+
     h1, h2 {
-      color: #2c3e50;
+      margin-bottom: 20px;
     }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
     ul {
-      list-style: none;
-      padding-left: 0;
+      padding-left: 20px;
     }
-    ul li::before {
-      content: '✔';
-      margin-right: 10px;
-      color: #3498db;
+
+    ul li {
+      margin-bottom: 10px;
     }
+
     .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .two-column {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
-    .project-entry {
-      background: white;
-      border-left: 4px solid #3498db;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
+
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
     }
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 20px;
-    }
-    .logo {
-      height: 60px;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-    .logo:hover {
-      transform: scale(1.1);
-    }
-    .contact p, .contact a {
-      font-size: 1.1em;
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#core">Skills</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#projects">Projects</a>   
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <a href="#cv">Resume</a>
+    </nav>
+    <br>
     <h1>Kayalvizhi Shanmugam</h1>
     <p>Senior Technical Leader – Microservices & Cloud Transformation Specialist</p>
   </header>
 
-  <section id="about">
-  <h2>About Me</h2>
-  <ul>
+  <section class="card" id="about">
+    <h2>About Me</h2>
+    <div class="two-column">
+       <ul>
       <li>16+ years of progressive experience delivering Java and microservices solutions across industries.</li>
       <li>50+ microservices deployed for Fortune 500 clients; improved transaction throughput by 30%.</li>
       <li>Accelerated Agile, DevOps maturity, boosting team velocity by 35% and reducing release cycles by 25%.</li>
@@ -86,9 +128,13 @@
   <li>Demonstrated ability to translate business goals into scalable, resilient, and performance-optimized technology solutions.</li>
   <li>Passionate about mentoring engineers, building high-performing teams, and fostering a culture of continuous improvement.</li>
 </ul>
-</section>
+      <div>
+        <img src="ProfileImage.jpg" alt="About Me Image" style="width:100%; border-radius: 8px;">
+      </div>
+    </div>
+  </section>
 
-  <section id="core-competencies">
+ <section class="card" id="competencies">
     <h2>Core Competencies</h2>
     <div class="grid">
       <ul>
@@ -112,10 +158,9 @@
     </div>
   </section>
 
-  <section id="project-entry">
-   
-     <h2>Projects</h2>
-    <div class="project-entry">
+  <section class="card" id="projects"> 
+    <h2>Projects</h2>
+    <div class="project-entry1">
       <strong>Senior Technical Lead – Microsoft (Capgemini via Conizioni Pvt Ltd)</strong>
       <ul>
         <li>Drove enterprise cloud transformation and modernization for Microsoft's application suite, aligning with strategic infrastructure goals.</li>
@@ -124,8 +169,7 @@
         <li>Championed global DevOps enablement through mentorship on Terraform, IaC, and secure CI/CD, resulting in a 50% productivity boost.</li>
       </ul>
     </div>
-
-    <div class="project-entry">
+    <div class="project-entry2">
       <strong>Technical Lead – MedImpact (Photon Interactive Pvt Ltd)</strong>
       <ul>
         <li>Engineered mission-critical healthcare microservices using Spring Boot, achieving high availability and modular design.</li>
@@ -135,7 +179,7 @@
       </ul>
     </div>
 
-    <div class="project-entry">
+    <div class="project-entry3">
       <strong>Principal Software Engineer – Fidelity Investments</strong>
       <ul>
         <li>Modernized monolithic systems into AWS-native microservices, decreasing release cycle time by 45%.</li>
@@ -145,7 +189,7 @@
       </ul>
     </div>
 
-    <div class="project-entry">
+    <div class="project-entry4">
       <strong>Senior Technical Lead – Capella.edu (ALTEN Calsoft Labs)</strong>
       <ul>
         <li>Led full-scale modernization initiative, converting legacy systems to Spring Boot microservices and graph-enabled Neo4j analytics.</li>
@@ -154,7 +198,7 @@
       </ul>
     </div>
 
-    <div class="project-entry">
+    <div class="project-entry5">
       <strong>Senior Associate – Cognizant Technology Solutions</strong>
       <ul>
         <li><strong>Discover Financial Services – Card API:</strong> Led cloud modernization initiatives by implementing Cloud Foundry and Redis Cache, enhancing scalability and resilience by 40%. Refactored boilerplate code to reduce runtime exceptions by 30% and delivered structured Java/Spring Boot training to 32 engineers, boosting onboarding and productivity by 25%.</li>
@@ -163,7 +207,7 @@
         <li><strong>The Hartford – Bond Application:</strong> Engineered RESTful APIs using Spring Boot, improving response times by 28%. Optimized performance across API layers, leading to a 40% increase in request throughput. Led critical production support, root cause analysis, and code quality initiatives, achieving a 35% reduction in recurring incidents and 85%+ test coverage.</li>
       </ul>
     </div> 
-<div class="project-entry">
+<div class="project-entry6">
   <strong>Lead Software Engineer – Collabera Technologies (Deputed to CGI)</strong>
   <ul>
     <li><strong>Target Platform Application Transformation (TPAT):</strong> Led infrastructure rationalization by re-platforming legacy apps onto virtual environments using VHS and DAP Java platform. Migrated key apps like Tracer, iMake, and DBxmargin to shared hosting platforms.</li>
@@ -174,18 +218,15 @@
   </ul>
 </div>  
 
-   <div class="project-entry">
+   <div class="project-entry7">
       <strong>Lead Engineer – HCL Technologies</strong>
       <ul>
         <li><strong>Merck Vaccine Sales Repository (MVSR):</strong> Developed a centralized backend repository for sales crediting and contracting analytics. Built Oracle-based modules and integrated with Cognos and Informatica to deliver MVD sales insights.</li>
         <li><strong>Object Swap Management (OSM):</strong> Built a web-based application for managing sales target swaps across regions, featuring role-based controls and scheduler tools. Also served as Scrum Master for Agile delivery cycles.</li>
         <li><strong>Wellogic Consult:</strong> Improved EHR and HIE data workflows for cross-organizational healthcare integration. Addressed production issues, added client-side validations, and enhanced security mechanisms.</li>
-        <li><strong>COATS Integration:</strong> Developed an interface between SME segment banking and courier delivery APIs. Ensured accurate customer data transmission and delivery updates via UNIX scripting and WSAD development.</li>
-        <li><strong>MOA (Mortgage One Account):</strong> Contributed to a system integrating mortgage data with core banking for unified customer views. Provided SIT, UAT, and production deployment support.</li>
-        <li><strong>US Audit Trail:</strong> Built a regulatory-compliant audit trail framework tracking changes in key modules like accounts and deals. Delivered daily change reporting and ensured traceability.</li>
-      </ul>
+        </ul>
     </div>  
-<div class="project-entry">
+<div class="project-entry8">
   <strong>Senior Developer – Esquire Systems (Deputed to Scope International)</strong>
   <ul>
     <li><strong>eBBS – Electronics Branch Banking System:</strong> Developed core banking system components for Consumer and Wholesale banking. Integrated eBBS with systems like ATM, IVR, SMS, and implemented real-time services and customer profiling modules.</li>
@@ -199,7 +240,7 @@
   </ul>
 </div>
 
- <div class="project-entry">
+ <div class="project-entry9">
       <strong>Software Engineer | ACE Infotech</strong>
   <ul>
     <li><strong>ePRO:</strong> Built a comprehensive HR and financial management system for internal tracking of employee performance, recruitment, and financial transactions, supporting improved business visibility and decision-making.</li>
@@ -210,48 +251,31 @@
     <li><strong>Responsibilities:</strong> End-to-end development from requirement specification and module design to coding, deployment, and customer integration support.</li>
   </ul>
 </div>
-  </section> 
-<section id="Skills">
-    <h2>Skills</h2>
-    <div class="grid">
-      <ul>
-        <li><strong>Programming:</strong> Java, C, C++, Python</li>
-        <li><strong>Frameworks:</strong> Spring (Boot, Batch, Cloud), Hibernate, Struts</li>
-        <li><strong>Cloud:</strong> AWS, Azure, PCF</li>
-        <li><strong>Web:</strong> Angular, React.js, Node.js, HTML5, CSS3</li>
-        <li><strong>Databases:</strong> PostgreSQL, MongoDB, Oracle, Neo4j</li>
-        <li><strong>DevOps:</strong> Jenkins, Docker, Kubernetes, GitLab CI/CD</li>
-        <li><strong>Messaging:</strong> Kafka, RabbitMQ, ActiveMQ</li>
-        <li><strong>Security/API:</strong> OAuth 2.0, JWT, Apigee, Gravitee.io, Akamai</li>
-      </ul>
-    </div>
   </section>
 
-  <section id="certifications">
+  <section class="card" id="certifications">
     <h2>Certifications</h2>
-    <div class="grid">
     <ul>
+      <li>Agile Scrum Master Certified</li>
       <li>AWS Certified Solutions Architect – Associate</li>
       <li>Sun Certified Java Professional</li>
-      <li>J2EE Expert – NIIT Chennai</li>
-      <li>Agile Scrum Master Certified</li>
+      <li>J2EE Expert – NIIT Chennai</li>      
     </ul>
-      </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-  <ul>
-  <li><strong>Phone:</strong> +91 9551264443</li><br>
-  <li><strong>Email:</strong> <a href="mailto:kayalshanmugam.techsavvy@gmail.com">kayalshanmugam.techsavvy@gmail.com</a></li><br>
-  <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kayalvizhi-shanmugam/" target="_blank">linkedin.com/in/kayalvizhi-shanmugam</a></li><br>
-  <li><strong>Location:</strong> Chennai, India</li><br>
-</ul>
+  <section class="card" id="contact">
+    <h2>Contact</h2> 
+      <ul>
+      <li><strong>Phone:</strong> +91 9551264443</li><br>
+      <li><strong>Email:</strong> <a href="mailto:kayalshanmugam.techsavvy@gmail.com">kayalshanmugam.techsavvy@gmail.com</a></li><br>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kayalvizhi-shanmugam/" target="_blank">linkedin.com/in/kayalvizhi-shanmugam</a></li><br>
+      <li><strong>Location:</strong> Chennai, India</li><br>
+    </ul>
   </section>
 
-  <section id="partners">
-    <h2>Featured Projects</h2>  
-    
+  <section class="card" id="cv">
+    <h2>Resume</h2>
+    <p>You can <a href="SK Resume May 2025.pdf">download my Resume</a> here.</p>
   </section>
 </body>
 </html>
