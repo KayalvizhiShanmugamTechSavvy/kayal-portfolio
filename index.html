@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kayalvizhi Shanmugam | Portfolio</title>
+  <script language="JavaScript">
+function noRightMouseClick() {
+return false;
+}
+function mousehandler(e) {
+var myevent = event;
+var eventbutton = myevent.button;
+if (eventbutton == 2) return false;
+}
+document.oncontextmenu = noRightMouseClick;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
   <style>
     * {
       box-sizing: border-box;
@@ -97,16 +110,7 @@
       text-decoration: underline;
     }
   </style>
-  <script>
-      function disableClick(){
-        document.onclick=function(event){
-          if (event.button == 2) {
-            alert('Not Allowed');
-            return false;
-          }
-        }
-      }
-    </script>
+  
 </head>
 <body>
   <header>
