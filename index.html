@@ -97,6 +97,16 @@
       text-decoration: underline;
     }
   </style>
+  <script>
+      function disableClick(){
+        document.onclick=function(event){
+          if (event.button == 2) {
+            alert('Not Allowed');
+            return false;
+          }
+        }
+      }
+    </script>
 </head>
 <body>
   <header>
